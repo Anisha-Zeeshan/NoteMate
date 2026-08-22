@@ -1,0 +1,104 @@
+# Miscellaneous
+*.class
+*.log
+*.pyc
+*.swp
+.DS_Store
+Thumbs.db
+.atom/
+.build/
+.buildlog/
+.history
+.svn/
+.swiftpm/
+migrate_working_dir/
+
+# IntelliJ related
+*.iml
+*.ipr
+*.iws
+.idea/
+
+# The .vscode folder contains launch configuration and tasks you configure in
+# VS Code which you may wish to be included in version control, so this line
+# is commented out by default.
+#.vscode/
+
+# Flutter/Dart/Pub related
+**/doc/api/
+**/ios/Flutter/.last_build_id
+.dart_tool/
+.flutter-plugins
+.flutter-plugins-dependencies
+.packages
+.pub-cache/
+.pub/
+/build/
+/coverage/
+
+# Android build artifacts
+android/.gradle/
+android/local.properties
+
+# iOS build artifacts
+ios/Pods/
+ios/Flutter/Flutter.framework
+ios/Flutter/Flutter.podspec
+
+# Symbolication related
+app.*.symbols
+
+# Obfuscation related
+app.*.map.json
+
+# Android Studio will place build artifacts here
+/android/app/debug
+/android/app/profile
+/android/app/release
+
+
+# ============================================
+# SECRETS — added for NoteMate
+# ============================================
+
+# Gemini API key (real values) — teammates copy lib/config/api_config.example.dart instead
+lib/config/api_config.dart
+
+# Firebase config — contains SHA-1-linked OAuth client info
+android/app/google-services.json
+
+# Android release signing (Play Store keystore)
+*.jks
+*.keystore
+key.properties
+android/key.properties
+
+# Environment variables, if ever added
+.env
+
+# Firebase local cache/logs
+.firebase/
+firebase-debug.log
+firestore-debug.log
+
+
+# ============================================
+# BACKEND (functions/) — only relevant if this .gitignore
+# sits at the repo ROOT, not inside frontend/. If this file
+# lives at frontend/.gitignore instead, the backend teammate
+# needs a separate functions/.gitignore with these same lines
+# (without the "functions/" prefix).
+# ============================================
+
+functions/node_modules/
+functions/lib/
+functions/.firebase/
+functions/*serviceAccount*.json
+functions/*firebase-adminsdk*.json
+
+# Firebase config for Dart-side initialization (FlutterFire CLI output).
+# Same sensitivity tier as google-services.json — included here to match
+# it for consistency. Same tradeoff applies: remove this line if you'd
+# rather have it sync automatically via git while the repo stays Private.
+lib/firebase_options.dart
+assets/models/qwen2.5-0.5b-instruct-q4_k_m.gguf
