@@ -18,10 +18,20 @@ functions/   Firebase Cloud Functions (Node.js)
    flutter pub get
    ```
 4. Make sure `frontend/android/app/google-services.json` exists — if it's missing, ask a teammate with Firebase access to send it to you
-5. Run the app:
+5. **Download the offline AI model file** (see below — required before the app will build)
+6. Run the app:
    ```
    flutter run
    ```
+
+### Offline AI model file (required, not in this repo)
+
+This app uses `qwen2.5-0.5b-instruct-q4_k_m.gguf` for offline AI features. It's a large binary file (300MB+), so it's excluded from Git via `.gitignore` — downloading it separately keeps the repo small and clones fast for everyone.
+
+1. Place it at exactly: `frontend/assets/models/qwen2.5-0.5b-instruct-q4_k_m.gguf`
+2. Confirm the filename matches exactly what's listed under `assets:` in `pubspec.yaml` — a mismatched name will cause a build error
+
+Without this file in place, the app will fail to build (missing asset error), even though everything else works.
 
 ### Google Sign-In on a new machine
 
@@ -49,12 +59,3 @@ Google Sign-In will fail with `ApiException: 10` on any laptop whose SHA-1 finge
    firebase deploy --only functions
    ```
 
-## Team
-
-| Name | Role |
-|------|------|
-| _(you)_ | Frontend |
-| _(teammate)_ | Frontend |
-| _(teammate)_ | Backend |
-
-See `CONTRIBUTING.md` for branch naming and how we work together.
