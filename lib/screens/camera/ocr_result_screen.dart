@@ -5,6 +5,7 @@ import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
 import '../../services/theme_provider.dart';
 import '../../services/ocr_services.dart';
+import '../../config/api_config.dart';
 import '../notes/notes_generation_screen.dart';
 
 class OCRResultScreen extends StatefulWidget {
@@ -73,7 +74,7 @@ class _OCRResultScreenState extends State<OCRResultScreen> {
       final mimeType = ext.endsWith('.png') ? 'image/png' : 'image/jpeg';
 
       final url = Uri.parse(
-          'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=');
+          'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=${ApiConfig.geminiApiKey}');
 
       final response = await http.post(
         url,
