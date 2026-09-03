@@ -73,7 +73,7 @@ class _OCRResultScreenState extends State<OCRResultScreen> {
       final mimeType = ext.endsWith('.png') ? 'image/png' : 'image/jpeg';
 
       final url = Uri.parse(
-          'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=AIzaSyBmiHaqRS8v1Y0vJBIcPsv6kql9aa829XI');
+          'https://generativelanguage.googleapis.com/v1beta/models/gemini-2.5-flash:generateContent?key=');
 
       final response = await http.post(
         url,
